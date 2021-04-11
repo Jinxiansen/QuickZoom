@@ -61,7 +61,10 @@ You will see the following interface, and then wait a moment to enter the meetin
 
 ## Feedback
 
-QuickZoom is a small tool written on a whim, and it took nearly a day. Although the code is only a few hundred lines, it helped me solve the trouble of manually filling in every time I join a meeting.
+**QuickZoom** is a small tool written on a whim. From the idea to the design of the icon and the completion of the code, it took nearly a day.
+
+Although the code is only a few hundred lines, it helped me solve the trouble of manually filling in every time I join a meeting.
+
 If you encounter problems in use, you can tell me in the following ways:
 
 [Github issue](https://github.com/Jinxiansen/QuickZoom/issues/new) | [Email](mailto:hi@jinxiansen.com)
