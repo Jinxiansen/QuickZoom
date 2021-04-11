@@ -28,7 +28,7 @@ You can choose any of the following installation methods to install.
 - Github Release Page
 	- Please visit the [Github Release](https://github.com/Jinxiansen/QuickZoom/releases) page to download this app.
 	- Then on the Lastest Release page, click the **QuickZoom.zip** file to download.
-	- After the download is complete, unzip the zip file and drag `QuickZoom` into `Applications`, or use the terminal, enter the directory where QuickZoom is located, and execute **mv QuickZoom /Applications/**
+	- After the download is complete, unzip the zip file and **drag** `QuickZoom` into `Applications`, or use the terminal, enter the directory where QuickZoom is located, and execute **mv QuickZoom.app /Applications/**  <img src="resources/terminal.png" width="70%"/>
 
 
 - Use Xcode to compile the source code
