@@ -30,9 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         clipboard.startListening()
         clipboard.onNewCopy { stringValue in
-            if AppStore.autoJoin {
-                Analyzers.parse(string: stringValue)
-            }
+            Analyzers.parse(string: stringValue)
         }
         menu.delegate = self
         popover.contentViewController = PopoverController.freshController()
@@ -53,7 +51,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func closeMenuClick(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
-    
     
     @IBAction func aboutMenuClick(_ sender: NSMenuItem) {
         About.openAbout()

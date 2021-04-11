@@ -18,10 +18,9 @@ class Analyzers {
             guard index > 0 else { continue }
             let value = row.digits
             guard !value.isEmpty else {
-                //                print("continue: \(value)")
+                // print("continue: \(value)")
                 continue
             }
-            print("value: \(value)")
             
             let lastValue = rows[index - 1].digits
             guard lastValue.count > 5 && value.count > 5 else {
@@ -38,23 +37,28 @@ class Analyzers {
     
     static func openZoom(meetingID: String, password: String) {
         
-        
         guard let url = URL(string: "zoommtg://zoom.us/join?confno=\(meetingID)&pwd=\(password)") else {
             print("URL Error")
             return
         }
         
-        let result = NSWorkspace.shared.open(url)
-        if result {
-            showTitle("Please install zoom and try again.")
+        if AppStore.autoJoin {
+            openZoom(url: url)
+        } else {
+            let title = "Do you want to join this meeting?"
+            let message = "Metting ID: \(meetingID)\nPassword: \(password)\n"
+            let result = Alert.showJoinMettingView(title: title, message: message)
+            if result {
+                openZoom(url: url)
+            }
         }
     }
     
-    private static func showTitle(_ title: String) {
-        let alert = NSAlert()
-        alert.messageText = title
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
-        alert.runModal()
+    private static func openZoom(url: URL) {
+        let result = NSWorkspace.shared.open(url)
+        if !result {
+            Alert.showMessage("Please install zoom and try again.")
+        }
     }
+    
 }

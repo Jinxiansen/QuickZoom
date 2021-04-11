@@ -17,6 +17,7 @@
 		41EBAF892621B66200DD2CDC /* Extension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF882621B66200DD2CDC /* Extension+.swift */; };
 		41EBAF8F2621C7B600DD2CDC /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF8E2621C7B600DD2CDC /* AppStore.swift */; };
 		41EBAF922621D99000DD2CDC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF912621D99000DD2CDC /* About.swift */; };
+		41EBAF9826231B7F00DD2CDC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF9726231B7F00DD2CDC /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		41EBAF882621B66200DD2CDC /* Extension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+.swift"; sourceTree = "<group>"; };
 		41EBAF8E2621C7B600DD2CDC /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		41EBAF912621D99000DD2CDC /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		41EBAF9726231B7F00DD2CDC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				418D4CA326219DDF005FB14A /* PopoverController.swift */,
 				4141892F2621AAD700CB7A3C /* Clipboard.swift */,
 				414189332621AC5800CB7A3C /* Analyzers.swift */,
+				41EBAF9726231B7F00DD2CDC /* Alert.swift */,
 				41EBAF882621B66200DD2CDC /* Extension+.swift */,
 				41EBAF8E2621C7B600DD2CDC /* AppStore.swift */,
 				41EBAF912621D99000DD2CDC /* About.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EBAF9826231B7F00DD2CDC /* Alert.swift in Sources */,
 				41EBAF892621B66200DD2CDC /* Extension+.swift in Sources */,
 				414189302621AAD700CB7A3C /* Clipboard.swift in Sources */,
 				414189342621AC5800CB7A3C /* Analyzers.swift in Sources */,
@@ -298,6 +302,7 @@
 				CODE_SIGN_ENTITLEMENTS = QuickZoom/QuickZoom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = QuickZoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,6 +323,7 @@
 				CODE_SIGN_ENTITLEMENTS = QuickZoom/QuickZoom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = QuickZoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
