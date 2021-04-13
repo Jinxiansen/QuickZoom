@@ -11,7 +11,7 @@ import Cocoa
 class About {
     
     private static let questions = NSAttributedString(
-        string: "If you have any questions, please let me know!",
+        string: "If you have any questions, tell me!",
         attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor]
     )
     

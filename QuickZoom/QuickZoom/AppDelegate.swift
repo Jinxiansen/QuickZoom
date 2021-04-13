@@ -14,9 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var autoJoinMenuItem: NSMenuItem!
     
-    let popover = NSPopover()
     let clipboard = Clipboard()
-    var eventMonitor: EventMonitor?
     
     lazy var statusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -33,10 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Analyzers.parse(string: stringValue)
         }
         menu.delegate = self
-        popover.contentViewController = PopoverController.freshController()
-        
-        setupEventMonitor()
-        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -66,22 +60,12 @@ extension AppDelegate {
         button.action = #selector(mouseClickHandler)
         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
     }
-    
-    func setupEventMonitor() {
-//        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
-//            guard let self = self else { return }
-//            if self.popover.isShown {
-//                self.closePopover(event!)
-//            }
-//        }
-    }
 }
 
 extension AppDelegate: NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
-        print("Will open.")
-//        autoJoinMenuItem.title = "Auto Join"
+        // print("Will open.")
     }
     
     func menuDidClose(_ menu: NSMenu) {
@@ -92,36 +76,8 @@ extension AppDelegate: NSMenuDelegate {
 extension AppDelegate {
     
     @objc func mouseClickHandler() {
-//        if let event = NSApp.currentEvent {
-//            switch event.type {
-//            case .leftMouseUp:
-//                togglePopover(popover)
-//            default:
-                statusItem.menu = menu
-                statusItem.button?.performClick(nil)
-//            }
-//        }
+        statusItem.menu = menu
+        statusItem.button?.performClick(nil)
     }
-    
-//    @objc func togglePopover(_ sender: AnyObject) {
-//        if popover.isShown {
-//            closePopover(sender)
-//        } else {
-//            showPopover(sender)
-//        }
-//    }
-//
-//    @objc func showPopover(_ sender: AnyObject) {
-//        if let button = statusItem.button {
-//            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-//        }
-//        eventMonitor?.start()
-//
-//    }
-//
-//    @objc func closePopover(_ sender: AnyObject) {
-//        popover.performClose(sender)
-//        eventMonitor?.stop()
-//    }
 }
 

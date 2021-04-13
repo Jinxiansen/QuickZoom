@@ -49,7 +49,7 @@ For example, when you copy the following link:
 ``` shell
 Join Zoom Meeting
 https://xxx.zoom.com.cn/j/95917011534
-Metting ID: 959 1701 1534
+Meeting ID: 959 1701 1534
 Password: 744594240
 ```
 >  The above meeting ID and password are no longer valid, and the format is for reference only.
