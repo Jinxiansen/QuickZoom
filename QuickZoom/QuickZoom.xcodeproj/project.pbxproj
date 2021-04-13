@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		414189302621AAD700CB7A3C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141892F2621AAD700CB7A3C /* Clipboard.swift */; };
 		414189342621AC5800CB7A3C /* Analyzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414189332621AC5800CB7A3C /* Analyzers.swift */; };
+		4176904E2625F4FC0025A239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176904D2625F4FC0025A239 /* AppDelegate.swift */; };
+		417690502625F4FC0025A239 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176904F2625F4FC0025A239 /* ViewController.swift */; };
+		417690522625F4FD0025A239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417690512625F4FD0025A239 /* Assets.xcassets */; };
+		417690552625F4FD0025A239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417690532625F4FD0025A239 /* Main.storyboard */; };
 		418D4C8F26219CFD005FB14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418D4C8E26219CFD005FB14A /* AppDelegate.swift */; };
 		418D4C9326219D00005FB14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9226219D00005FB14A /* Assets.xcassets */; };
 		418D4C9626219D00005FB14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9426219D00005FB14A /* Main.storyboard */; };
@@ -17,11 +21,41 @@
 		41EBAF922621D99000DD2CDC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF912621D99000DD2CDC /* About.swift */; };
 		41EBAF9826231B7F00DD2CDC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF9726231B7F00DD2CDC /* Alert.swift */; };
 		41EBAF9D2625DCD800DD2CDC /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF9C2625DCD800DD2CDC /* Const.swift */; };
+		41EBB0B52625F36D00DD2CDC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EBB0B42625F36D00DD2CDC /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		41EBAFBC2625EDCE00DD2CDC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41EBB0B22625F31A00DD2CDC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4141892F2621AAD700CB7A3C /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		414189332621AC5800CB7A3C /* Analyzers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyzers.swift; sourceTree = "<group>"; };
+		4176904B2625F4FC0025A239 /* QuickZoomHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickZoomHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4176904D2625F4FC0025A239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4176904F2625F4FC0025A239 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		417690512625F4FD0025A239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		417690542625F4FD0025A239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		417690562625F4FD0025A239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		417690572625F4FD0025A239 /* QuickZoomHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickZoomHelper.entitlements; sourceTree = "<group>"; };
 		418D4C8B26219CFD005FB14A /* QuickZoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickZoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		418D4C8E26219CFD005FB14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		418D4C9226219D00005FB14A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,24 +67,48 @@
 		41EBAF912621D99000DD2CDC /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		41EBAF9726231B7F00DD2CDC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		41EBAF9C2625DCD800DD2CDC /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		41EBB0B42625F36D00DD2CDC /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		418D4C8826219CFD005FB14A /* Frameworks */ = {
+		417690482625F4FC0025A239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		418D4C8826219CFD005FB14A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41EBB0B52625F36D00DD2CDC /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4176904C2625F4FC0025A239 /* QuickZoomHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4176904D2625F4FC0025A239 /* AppDelegate.swift */,
+				4176904F2625F4FC0025A239 /* ViewController.swift */,
+				417690512625F4FD0025A239 /* Assets.xcassets */,
+				417690532625F4FD0025A239 /* Main.storyboard */,
+				417690562625F4FD0025A239 /* Info.plist */,
+				417690572625F4FD0025A239 /* QuickZoomHelper.entitlements */,
+			);
+			path = QuickZoomHelper;
+			sourceTree = "<group>";
+		};
 		418D4C8226219CFD005FB14A = {
 			isa = PBXGroup;
 			children = (
 				418D4C8D26219CFD005FB14A /* QuickZoom */,
+				4176904C2625F4FC0025A239 /* QuickZoomHelper */,
 				418D4C8C26219CFD005FB14A /* Products */,
+				41EBB0B32625F36D00DD2CDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				418D4C8B26219CFD005FB14A /* QuickZoom.app */,
+				4176904B2625F4FC0025A239 /* QuickZoomHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,9 +140,34 @@
 			path = QuickZoom;
 			sourceTree = "<group>";
 		};
+		41EBB0B32625F36D00DD2CDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41EBB0B42625F36D00DD2CDC /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4176904A2625F4FC0025A239 /* QuickZoomHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4176905A2625F4FD0025A239 /* Build configuration list for PBXNativeTarget "QuickZoomHelper" */;
+			buildPhases = (
+				417690472625F4FC0025A239 /* Sources */,
+				417690482625F4FC0025A239 /* Frameworks */,
+				417690492625F4FC0025A239 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickZoomHelper;
+			productName = QuickZoomHelper;
+			productReference = 4176904B2625F4FC0025A239 /* QuickZoomHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		418D4C8A26219CFD005FB14A /* QuickZoom */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 418D4C9B26219D00005FB14A /* Build configuration list for PBXNativeTarget "QuickZoom" */;
@@ -91,6 +175,8 @@
 				418D4C8726219CFD005FB14A /* Sources */,
 				418D4C8826219CFD005FB14A /* Frameworks */,
 				418D4C8926219CFD005FB14A /* Resources */,
+				41EBAFBC2625EDCE00DD2CDC /* Embed App Extensions */,
+				41EBB0B22625F31A00DD2CDC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -110,6 +196,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					4176904A2625F4FC0025A239 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					418D4C8A26219CFD005FB14A = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -129,11 +218,21 @@
 			projectRoot = "";
 			targets = (
 				418D4C8A26219CFD005FB14A /* QuickZoom */,
+				4176904A2625F4FC0025A239 /* QuickZoomHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		417690492625F4FC0025A239 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417690522625F4FD0025A239 /* Assets.xcassets in Resources */,
+				417690552625F4FD0025A239 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		418D4C8926219CFD005FB14A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +245,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		417690472625F4FC0025A239 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417690502625F4FC0025A239 /* ViewController.swift in Sources */,
+				4176904E2625F4FC0025A239 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		418D4C8726219CFD005FB14A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,6 +272,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		417690532625F4FD0025A239 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				417690542625F4FD0025A239 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		418D4C9426219D00005FB14A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -175,6 +291,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		417690582625F4FD0025A239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickZoomHelper/QuickZoomHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = QuickZoomHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.null.quickZoomHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		417690592625F4FD0025A239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickZoomHelper/QuickZoomHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = QuickZoomHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.null.quickZoomHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		418D4C9926219D00005FB14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -293,6 +451,7 @@
 		418D4C9C26219D00005FB14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QuickZoom/QuickZoom.entitlements;
@@ -314,6 +473,7 @@
 		418D4C9D26219D00005FB14A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QuickZoom/QuickZoom.entitlements;
@@ -335,6 +495,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4176905A2625F4FD0025A239 /* Build configuration list for PBXNativeTarget "QuickZoomHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417690582625F4FD0025A239 /* Debug */,
+				417690592625F4FD0025A239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		418D4C8626219CFD005FB14A /* Build configuration list for PBXProject "QuickZoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

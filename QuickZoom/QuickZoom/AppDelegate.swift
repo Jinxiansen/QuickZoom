@@ -6,10 +6,15 @@
 //
 
 import Cocoa
+import ServiceManagement
+
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-  
+    
     @IBOutlet weak var menu: NSMenu!
     
     @IBOutlet weak var autoJoinMenuItem: NSMenuItem!
@@ -31,6 +36,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Analyzers.parse(string: stringValue)
         }
         menu.delegate = self
+        
+        launchService()
+        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -59,6 +67,38 @@ extension AppDelegate {
         button.image = NSImage(named: "statusIcon")
         button.action = #selector(mouseClickHandler)
         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+    }
+
+    
+    func launchService() {
+        
+        let mainAppIdentifier = "com.null.quickZoom"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
+        
+        if !isRunning {
+            DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.terminate), name: .killLauncher, object: mainAppIdentifier)
+            
+            let path = Bundle.main.bundlePath as NSString
+            var components = path.pathComponents
+            components.removeLast()
+            components.removeLast()
+            components.removeLast()
+            components.append("MacOS")
+            components.append("MainApplication") //main app name
+            
+            let newPath = NSString.path(withComponents: components)
+            
+            NSWorkspace.shared.launchApplication(newPath)
+        }
+        else {
+            self.terminate()
+        }
+        
+    }
+    
+    @objc func terminate() {
+        NSApp.terminate(nil)
     }
 }
 
