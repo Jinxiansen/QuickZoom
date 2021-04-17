@@ -47,10 +47,18 @@ After you have successfully installed Zoom and QuickZoom, you can try to copy yo
 For example, when you copy the following link:
 
 ``` shell
-Join Zoom Meeting
-https://xxx.zoom.com.cn/j/95917011534
+case 1
 Meeting ID: 959 1701 1534
-Password: 744594240
+Passcode: 744594240
+
+case 2
+https://xxx.zoom.com.cn/j/3211233218?pwd=jaYeQt-YmAITGr0D3MRTsTm6M531L2vT
+
+case 3
+https://xxx.zoom.com.cn/j/3759079899 (Passcode: 682782330)
+
+Select the meeting ID and password, and then press Command + C to copy.
+
 ```
 >  The above meeting ID and password are no longer valid, and the format is for reference only.
 
