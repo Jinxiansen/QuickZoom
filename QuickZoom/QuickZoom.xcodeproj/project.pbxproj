@@ -10,12 +10,12 @@
 		414189302621AAD700CB7A3C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141892F2621AAD700CB7A3C /* Clipboard.swift */; };
 		414189342621AC5800CB7A3C /* Analyzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414189332621AC5800CB7A3C /* Analyzers.swift */; };
 		4176904E2625F4FC0025A239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176904D2625F4FC0025A239 /* AppDelegate.swift */; };
-		417690502625F4FC0025A239 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176904F2625F4FC0025A239 /* ViewController.swift */; };
 		417690522625F4FD0025A239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417690512625F4FD0025A239 /* Assets.xcassets */; };
 		417690552625F4FD0025A239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417690532625F4FD0025A239 /* Main.storyboard */; };
 		418D4C8F26219CFD005FB14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418D4C8E26219CFD005FB14A /* AppDelegate.swift */; };
 		418D4C9326219D00005FB14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9226219D00005FB14A /* Assets.xcassets */; };
 		418D4C9626219D00005FB14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9426219D00005FB14A /* Main.storyboard */; };
+		41C1E942262A955200994511 /* QuickZoomHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4176904B2625F4FC0025A239 /* QuickZoomHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		41EBAF892621B66200DD2CDC /* Extension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF882621B66200DD2CDC /* Extension+.swift */; };
 		41EBAF8F2621C7B600DD2CDC /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF8E2621C7B600DD2CDC /* AppStore.swift */; };
 		41EBAF922621D99000DD2CDC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF912621D99000DD2CDC /* About.swift */; };
@@ -41,6 +41,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
+				41C1E942262A955200994511 /* QuickZoomHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +52,6 @@
 		414189332621AC5800CB7A3C /* Analyzers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyzers.swift; sourceTree = "<group>"; };
 		4176904B2625F4FC0025A239 /* QuickZoomHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickZoomHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4176904D2625F4FC0025A239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4176904F2625F4FC0025A239 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		417690512625F4FD0025A239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417690542625F4FD0025A239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		417690562625F4FD0025A239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				4176904D2625F4FC0025A239 /* AppDelegate.swift */,
-				4176904F2625F4FC0025A239 /* ViewController.swift */,
 				417690512625F4FD0025A239 /* Assets.xcassets */,
 				417690532625F4FD0025A239 /* Main.storyboard */,
 				417690562625F4FD0025A239 /* Info.plist */,
@@ -249,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417690502625F4FC0025A239 /* ViewController.swift in Sources */,
 				4176904E2625F4FC0025A239 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

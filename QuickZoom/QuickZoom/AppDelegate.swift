@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         menu.delegate = self
         
-        launchService()
+        startupAppWhenLogin()
         
     }
     
@@ -69,37 +69,19 @@ extension AppDelegate {
         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
     }
 
-    
-    func launchService() {
-        
-        let mainAppIdentifier = "com.null.quickZoom"
+    func startupAppWhenLogin() {
+
+        let launcherAppId = "com.null.quickZoomHelper"
         let runningApps = NSWorkspace.shared.runningApplications
-        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
-        
-        if !isRunning {
-            DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.terminate), name: .killLauncher, object: mainAppIdentifier)
-            
-            let path = Bundle.main.bundlePath as NSString
-            var components = path.pathComponents
-            components.removeLast()
-            components.removeLast()
-            components.removeLast()
-            components.append("MacOS")
-            components.append("MainApplication") //main app name
-            
-            let newPath = NSString.path(withComponents: components)
-            
-            NSWorkspace.shared.launchApplication(newPath)
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
+
+        SMLoginItemSetEnabled(launcherAppId as CFString, true)
+
+        if isRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
         }
-        else {
-            self.terminate()
-        }
-        
     }
     
-    @objc func terminate() {
-        NSApp.terminate(nil)
-    }
 }
 
 extension AppDelegate: NSMenuDelegate {

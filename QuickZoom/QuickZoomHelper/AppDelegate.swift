@@ -12,7 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        startupAppWhenLogin()
+        launchService()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -28,16 +28,34 @@ extension Notification.Name {
 
 extension AppDelegate {
     
-    func startupAppWhenLogin() {
-
-        let launcherAppId = "com.null.quickZoomHelper"
+    func launchService() {
+        
+        let mainAppIdentifier = "com.null.quickZoom"
         let runningApps = NSWorkspace.shared.runningApplications
-        let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
-
-        SMLoginItemSetEnabled(launcherAppId as CFString, true)
-
-        if isRunning {
-            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
+        
+        if !isRunning {
+            DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.terminate), name: .killLauncher, object: mainAppIdentifier)
+            
+            let path = Bundle.main.bundlePath as NSString
+            var components = path.pathComponents
+            components.removeLast()
+            components.removeLast()
+            components.removeLast()
+            components.append("MacOS")
+            components.append("MainApplication") //main app name
+            
+            let newPath = NSString.path(withComponents: components)
+            
+            NSWorkspace.shared.launchApplication(newPath)
         }
+        else {
+            self.terminate()
+        }
+        
+    }
+    
+    @objc func terminate() {
+        NSApp.terminate(nil)
     }
 }
