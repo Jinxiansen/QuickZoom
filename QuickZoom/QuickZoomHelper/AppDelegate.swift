@@ -19,7 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
 }
 
 extension Notification.Name {
@@ -43,10 +42,9 @@ extension AppDelegate {
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("MainApplication") //main app name
-            
+            components.append("QuickZoom") //main app name
+
             let newPath = NSString.path(withComponents: components)
-            
             NSWorkspace.shared.launchApplication(newPath)
         }
         else {

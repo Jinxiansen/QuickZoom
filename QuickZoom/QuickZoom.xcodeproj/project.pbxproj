@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4136221A262ABB23006AEF53 /* UsageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41362219262ABB23006AEF53 /* UsageController.swift */; };
 		414189302621AAD700CB7A3C /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141892F2621AAD700CB7A3C /* Clipboard.swift */; };
 		414189342621AC5800CB7A3C /* Analyzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414189332621AC5800CB7A3C /* Analyzers.swift */; };
 		4176904E2625F4FC0025A239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176904D2625F4FC0025A239 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 		418D4C9326219D00005FB14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9226219D00005FB14A /* Assets.xcassets */; };
 		418D4C9626219D00005FB14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418D4C9426219D00005FB14A /* Main.storyboard */; };
 		41C1E942262A955200994511 /* QuickZoomHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4176904B2625F4FC0025A239 /* QuickZoomHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		41D53D69262AF06700B46399 /* preview.gif in Resources */ = {isa = PBXBuildFile; fileRef = 41D53D68262AF06700B46399 /* preview.gif */; };
 		41EBAF892621B66200DD2CDC /* Extension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF882621B66200DD2CDC /* Extension+.swift */; };
 		41EBAF8F2621C7B600DD2CDC /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF8E2621C7B600DD2CDC /* AppStore.swift */; };
 		41EBAF922621D99000DD2CDC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBAF912621D99000DD2CDC /* About.swift */; };
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41362219262ABB23006AEF53 /* UsageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageController.swift; sourceTree = "<group>"; };
 		4141892F2621AAD700CB7A3C /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		414189332621AC5800CB7A3C /* Analyzers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyzers.swift; sourceTree = "<group>"; };
 		4176904B2625F4FC0025A239 /* QuickZoomHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickZoomHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +65,7 @@
 		418D4C9526219D00005FB14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		418D4C9726219D00005FB14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		418D4C9826219D00005FB14A /* QuickZoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickZoom.entitlements; sourceTree = "<group>"; };
+		41D53D68262AF06700B46399 /* preview.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preview.gif; sourceTree = "<group>"; };
 		41EBAF882621B66200DD2CDC /* Extension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+.swift"; sourceTree = "<group>"; };
 		41EBAF8E2621C7B600DD2CDC /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		41EBAF912621D99000DD2CDC /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				418D4C8E26219CFD005FB14A /* AppDelegate.swift */,
+				41362219262ABB23006AEF53 /* UsageController.swift */,
 				4141892F2621AAD700CB7A3C /* Clipboard.swift */,
 				414189332621AC5800CB7A3C /* Analyzers.swift */,
 				41EBAF882621B66200DD2CDC /* Extension+.swift */,
@@ -134,6 +139,7 @@
 				418D4C9226219D00005FB14A /* Assets.xcassets */,
 				418D4C9426219D00005FB14A /* Main.storyboard */,
 				418D4C9726219D00005FB14A /* Info.plist */,
+				41D53D68262AF06700B46399 /* preview.gif */,
 				418D4C9826219D00005FB14A /* QuickZoom.entitlements */,
 			);
 			path = QuickZoom;
@@ -238,6 +244,7 @@
 			files = (
 				418D4C9326219D00005FB14A /* Assets.xcassets in Resources */,
 				418D4C9626219D00005FB14A /* Main.storyboard in Resources */,
+				41D53D69262AF06700B46399 /* preview.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,7 @@
 			files = (
 				41EBAF9826231B7F00DD2CDC /* Alert.swift in Sources */,
 				41EBAF892621B66200DD2CDC /* Extension+.swift in Sources */,
+				4136221A262ABB23006AEF53 /* UsageController.swift in Sources */,
 				414189302621AAD700CB7A3C /* Clipboard.swift in Sources */,
 				414189342621AC5800CB7A3C /* Analyzers.swift in Sources */,
 				418D4C8F26219CFD005FB14A /* AppDelegate.swift in Sources */,
@@ -462,6 +470,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.null.quickZoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -484,6 +493,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.null.quickZoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

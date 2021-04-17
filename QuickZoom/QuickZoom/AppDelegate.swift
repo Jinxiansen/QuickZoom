@@ -8,6 +8,7 @@
 import Cocoa
 import ServiceManagement
 
+let launcherAppId = "com.null.quickZoomHelper"
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
 }
@@ -18,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: NSMenu!
     
     @IBOutlet weak var autoJoinMenuItem: NSMenuItem!
+    @IBOutlet weak var autoLoginMenuItem: NSMenuItem!
     
     let clipboard = Clipboard()
     
@@ -26,19 +28,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return statusItem
     }()
     
+    var isAutoLogin: Bool {
+        NSWorkspace.shared.runningApplications.contains { $0.bundleIdentifier == launcherAppId }
+    }
+    
+    lazy var usageWindow: NSWindow = {
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 280, height: 300),
+            styleMask: [.titled, .closable],
+            backing: .buffered,
+            defer: false)
+        window.center()
+        window.title = "How to use QuickZoom"
+        window.contentViewController = NSStoryboard.loadController(UsageController.self)
+        window.isReleasedWhenClosed = false
+        return window
+    }()
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         addMenuIconButton()
         autoJoinMenuItem.state = AppStore.autoJoin ? .on : .off
+        autoLoginMenuItem.state = isAutoLogin ? .on : .off
         
         clipboard.startListening()
         clipboard.onNewCopy { stringValue in
             Analyzers.parse(string: stringValue)
         }
         menu.delegate = self
-        
-        startupAppWhenLogin()
-        
+         
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -50,8 +68,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         autoJoinMenuItem.state = AppStore.autoJoin ? .on : .off
     }
     
+    @IBAction func autoLoginClick(_ sender: NSMenuItem) {
+        autoLoginMenuItem.state = autoLoginMenuItem.state == .on ? .off : .on
+        startupAppWhenLogin(startup: autoLoginMenuItem.state == .on)
+    }
+    
+    
     @IBAction func closeMenuClick(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
+    }
+    
+    @IBAction func usageMenuClick(_ sender: NSMenuItem) {
+        openUsageController()
     }
     
     @IBAction func aboutMenuClick(_ sender: NSMenuItem) {
@@ -62,6 +90,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     
+    func openUsageController() {
+        NSApp.activate(ignoringOtherApps: true)
+        usageWindow.makeKeyAndOrderFront(self)
+    }
+    
     func addMenuIconButton() {
         guard let button = statusItem.button else { return }
         button.image = NSImage(named: "statusIcon")
@@ -69,13 +102,12 @@ extension AppDelegate {
         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
     }
 
-    func startupAppWhenLogin() {
+    func startupAppWhenLogin(startup: Bool) {
 
-        let launcherAppId = "com.null.quickZoomHelper"
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
 
-        SMLoginItemSetEnabled(launcherAppId as CFString, true)
+        SMLoginItemSetEnabled(launcherAppId as CFString, startup)
 
         if isRunning {
             DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)

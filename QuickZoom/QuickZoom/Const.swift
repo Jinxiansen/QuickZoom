@@ -7,6 +7,13 @@
 
 import Foundation
 
+
+enum Const {
+    static let appName = "QuickZoom"
+    static let github = "https://github.com/Jinxiansen/QuickZoom"
+    static let email = "mailto:hi@jinxiansen.com"
+}
+
 public let supportLanguages: [String: String] = ["Meeting ID":"Passcode",
                                                  "회의 ID":"암호",
                                                  "会议号":"密码",

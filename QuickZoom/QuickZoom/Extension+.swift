@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Cocoa
 
 extension String {
     private static var digits = UnicodeScalar("0")..."9"
@@ -27,5 +28,18 @@ extension String {
     
     var removeSpace: Self {
         replacingOccurrences(of: " ", with: "")
+    }
+}
+
+
+extension NSStoryboard {
+
+    static func loadController<T: NSViewController>(_ controller: T.Type) -> T {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        let identifier = NSStoryboard.SceneIdentifier(String(describing: controller))
+        guard let controller = storyboard.instantiateController(withIdentifier: identifier) as? T else {
+            fatalError("Something Wrong with Main.storyboard")
+        }
+        return controller
     }
 }

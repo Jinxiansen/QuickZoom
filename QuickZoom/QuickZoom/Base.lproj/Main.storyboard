@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,6 +674,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="QuickZoom" customModuleProvider="target">
                     <connections>
                         <outlet property="autoJoinMenuItem" destination="KCz-VP-P2S" id="Erf-UY-gmE"/>
+                        <outlet property="autoLoginMenuItem" destination="YSd-cy-gyt" id="FnK-IH-38V"/>
                         <outlet property="menu" destination="nXh-mP-g49" id="89t-ns-ge8"/>
                     </connections>
                 </customObject>
@@ -680,21 +682,37 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="nXh-mP-g49">
                     <items>
-                        <menuItem title="Auto Join" state="on" id="KCz-VP-P2S">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem title="Auto join meeting" state="on" keyEquivalent="m" id="KCz-VP-P2S">
                             <connections>
                                 <action selector="autoJoinClick:" target="Voe-Tx-rLC" id="PQz-Xa-Z3n"/>
                             </connections>
                         </menuItem>
-                        <menuItem isSeparatorItem="YES" id="R0g-xc-fym"/>
-                        <menuItem title="About US" id="p4e-Qa-NDC">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem title="Start at login" keyEquivalent="l" id="YSd-cy-gyt">
                             <connections>
-                                <action selector="aboutMenuClick:" target="Voe-Tx-rLC" id="beH-zG-AsX"/>
+                                <action selector="autoLoginClick:" target="Voe-Tx-rLC" id="Jjy-rc-TTN"/>
                             </connections>
                         </menuItem>
-                        <menuItem isSeparatorItem="YES" id="rWT-GN-M7b"/>
-                        <menuItem title="Quit App" keyEquivalent="q" id="O6d-6g-stn">
+                        <menuItem isSeparatorItem="YES" id="R0g-xc-fym"/>
+                        <menuItem title="Help" id="DVY-1A-s5j">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="Help" id="eSV-Sc-6Wa">
+                                <items>
+                                    <menuItem title="How to Use" id="abh-gf-mHM">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="usageMenuClick:" target="Voe-Tx-rLC" id="rIk-If-iaZ"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="About" id="p4e-Qa-NDC">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="aboutMenuClick:" target="Voe-Tx-rLC" id="beH-zG-AsX"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Quit" keyEquivalent="q" id="O6d-6g-stn">
                             <connections>
                                 <action selector="closeMenuClick:" target="Voe-Tx-rLC" id="m52-F4-3Bs"/>
                             </connections>
@@ -704,5 +722,73 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
+        <!--Usage Controller-->
+        <scene sceneID="20V-1H-UtE">
+            <objects>
+                <viewController storyboardIdentifier="UsageController" id="tdz-Id-arb" customClass="UsageController" customModule="QuickZoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="zR6-sF-GPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="641"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MWx-FM-O0B">
+                                <rect key="frame" x="247" y="570" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MWx-FM-O0B" secondAttribute="height" id="SV6-it-IeQ"/>
+                                    <constraint firstAttribute="width" constant="66" id="n4u-1y-xDS"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon" id="JWB-L9-t8Q"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8v8-lm-zca">
+                                <rect key="frame" x="27" y="31" width="506" height="506"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="M99-xr-xdl"/>
+                                    <constraint firstAttribute="width" secondItem="8v8-lm-zca" secondAttribute="height" id="i4U-rm-c9i"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="preview" id="xjm-01-fcA"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C78-03-WUJ">
+                                <rect key="frame" x="28" y="10" width="504" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Thank you for using QuickZoom 😜" id="WKy-bI-qWU">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WkC-iy-P64" customClass="LinkTextField" customModule="QuickZoom" customModuleProvider="target">
+                                <rect key="frame" x="28" y="544" width="504" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" title="QuickZoom..." allowsEditingTextAttributes="YES" id="UHj-Q2-wdx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8v8-lm-zca" firstAttribute="top" secondItem="WkC-iy-P64" secondAttribute="bottom" constant="10" id="2Xk-Se-zJT"/>
+                            <constraint firstItem="MWx-FM-O0B" firstAttribute="top" secondItem="zR6-sF-GPQ" secondAttribute="top" constant="10" id="6Ri-8Y-x7N"/>
+                            <constraint firstItem="C78-03-WUJ" firstAttribute="top" secondItem="8v8-lm-zca" secondAttribute="bottom" constant="10" id="Dxr-CB-lTV"/>
+                            <constraint firstAttribute="trailing" secondItem="C78-03-WUJ" secondAttribute="trailing" constant="30" id="ECs-yk-lFx"/>
+                            <constraint firstItem="WkC-iy-P64" firstAttribute="leading" secondItem="zR6-sF-GPQ" secondAttribute="leading" constant="30" id="So9-gP-QPg"/>
+                            <constraint firstItem="C78-03-WUJ" firstAttribute="leading" secondItem="zR6-sF-GPQ" secondAttribute="leading" constant="30" id="X0h-vZ-fJB"/>
+                            <constraint firstAttribute="bottom" secondItem="C78-03-WUJ" secondAttribute="bottom" constant="10" id="c1L-id-OcV"/>
+                            <constraint firstItem="WkC-iy-P64" firstAttribute="top" secondItem="MWx-FM-O0B" secondAttribute="bottom" constant="10" id="eMD-l3-Yvy"/>
+                            <constraint firstAttribute="trailing" secondItem="8v8-lm-zca" secondAttribute="trailing" constant="30" id="mMh-n5-T01"/>
+                            <constraint firstItem="MWx-FM-O0B" firstAttribute="centerX" secondItem="zR6-sF-GPQ" secondAttribute="centerX" id="sKs-nf-DFt"/>
+                            <constraint firstItem="8v8-lm-zca" firstAttribute="leading" secondItem="zR6-sF-GPQ" secondAttribute="leading" constant="30" id="xzD-7o-7BI"/>
+                            <constraint firstAttribute="trailing" secondItem="WkC-iy-P64" secondAttribute="trailing" constant="30" id="zom-gm-2Rn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="WkC-iy-P64" id="vcs-wg-0rH"/>
+                    </connections>
+                </viewController>
+                <customObject id="rjk-69-Ebd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="801"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="358" height="358"/>
+        <image name="preview" width="700" height="698"/>
+    </resources>
 </document>

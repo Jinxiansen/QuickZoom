@@ -18,12 +18,12 @@ class About {
     private static var links: NSMutableAttributedString {
         let string = NSMutableAttributedString(string: "GitHub│Support",
                                                attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
-        string.addAttribute(.link, value: "https://github.com/Jinxiansen/QuickZoom", range: NSRange(location: 0, length: 6))
-        string.addAttribute(.link, value: "mailto:hi@jinxiansen.com", range: NSRange(location: 7, length: 7))
+        string.addAttribute(.link, value: Const.github, range: NSRange(location: 0, length: 6))
+        string.addAttribute(.link, value: Const.email, range: NSRange(location: 7, length: 7))
         return string
     }
     
-    private static var credits: NSMutableAttributedString {
+    static var credits: NSMutableAttributedString {
         let credits = NSMutableAttributedString(string: "",
                                                 attributes: [NSAttributedString.Key.foregroundColor: NSColor.labelColor])
         credits.append(links)

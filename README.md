@@ -1,5 +1,5 @@
 
-<img src="resources/banner.png" width="100%"/>
+![](resources/banner.png)
 
 
 [![Build Status](https://img.shields.io/badge/platforms-macOS%20-green.svg)](https://github.com/Jinxiansen/QuickZoom)
@@ -14,7 +14,7 @@ As [Zoom](https://zoom.us) becomes more and more popular, in our daily work, the
 
 When you copy the Zoom link, you automatically join the meeting.
 
-<img src="resources/preview.gif" width="80%"/>
+![](resources/preview.gif)
 
 ## Requirements
 
@@ -28,7 +28,7 @@ You can choose any of the following installation methods to install.
 - Github Release Page
 	- Please visit the [Github Release](https://github.com/Jinxiansen/QuickZoom/releases) page to download this app.
 	- Then on the Lastest Release page, click the **QuickZoom.zip** file to download.
-	- After the download is complete, unzip the zip file and **drag** `QuickZoom` into `Applications`, or use the terminal, enter the directory where QuickZoom is located, and execute **mv QuickZoom.app /Applications/**  <img src="resources/terminal.png" width="70%"/>
+	- After the download is complete, unzip the zip file and **drag** `QuickZoom` into `Applications`, or use the terminal, enter the directory where QuickZoom is located, and execute **mv QuickZoom.app /Applications/**  ![](resources/terminal.png)
 
 
 - Use Xcode to compile the source code
@@ -36,7 +36,7 @@ You can choose any of the following installation methods to install.
 
 After the installation is successful, you will see this Q icon in the top menu bar.
 
-<img src="resources/menu.png" width="30%"/>
+![](resources/menu.png)
 
 
 ## How To Use
@@ -64,7 +64,7 @@ Select the meeting ID and password, and then press Command + C to copy.
 
 You will see the following interface, and then wait a moment to enter the meeting.
 
-<img src="resources/connecting.png" width="50%"/>
+![](resources/connecting.png)
 
 
 ## Feedback
