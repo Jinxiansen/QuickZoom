@@ -78,7 +78,7 @@ If you encounter problems in use, you can tell me in the following ways:
 [Github issue](https://github.com/Jinxiansen/QuickZoom/issues/new) | [Email](mailto:hi@jinxiansen.com)
 
 
-## 📄 License	
+## License	
 
 QuickZoom is released under the [MIT license](LICENSE). See LICENSE for details.
 
