@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -673,8 +672,8 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="QuickZoom" customModuleProvider="target">
                     <connections>
-                        <outlet property="autoJoinMenuItem" destination="KCz-VP-P2S" id="Erf-UY-gmE"/>
-                        <outlet property="autoLoginMenuItem" destination="YSd-cy-gyt" id="FnK-IH-38V"/>
+                        <outlet property="autoJoinItem" destination="KCz-VP-P2S" id="Erf-UY-gmE"/>
+                        <outlet property="autoLoginItem" destination="YSd-cy-gyt" id="FnK-IH-38V"/>
                         <outlet property="menu" destination="nXh-mP-g49" id="89t-ns-ge8"/>
                     </connections>
                 </customObject>

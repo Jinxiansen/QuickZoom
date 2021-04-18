@@ -12,6 +12,8 @@ struct AppStore {
     @Storage(key: "auto_join_key", defaultValue: true)
     static var autoJoin: Bool
     
+    @Storage(key: "auto_login_key", defaultValue: true)
+    static var autoLogin: Bool
 }
 
 @propertyWrapper

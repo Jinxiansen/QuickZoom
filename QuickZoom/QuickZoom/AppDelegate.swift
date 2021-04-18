@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var menu: NSMenu!
     
-    @IBOutlet weak var autoJoinMenuItem: NSMenuItem!
-    @IBOutlet weak var autoLoginMenuItem: NSMenuItem!
+    @IBOutlet weak var autoJoinItem: NSMenuItem!
+    @IBOutlet weak var autoLoginItem: NSMenuItem!
     
     let clipboard = Clipboard()
     
@@ -27,10 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         return statusItem
     }()
-    
-    var isAutoLogin: Bool {
-        NSWorkspace.shared.runningApplications.contains { $0.bundleIdentifier == launcherAppId }
-    }
     
     lazy var usageWindow: NSWindow = {
         let window = NSWindow(
@@ -48,15 +44,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         addMenuIconButton()
-        autoJoinMenuItem.state = AppStore.autoJoin ? .on : .off
-        autoLoginMenuItem.state = isAutoLogin ? .on : .off
+        configureMenuStatus()
         
         clipboard.startListening()
         clipboard.onNewCopy { stringValue in
             Analyzers.parse(string: stringValue)
         }
         menu.delegate = self
-         
+
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -65,12 +60,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func autoJoinClick(_ sender: NSMenuItem) {
         AppStore.autoJoin.toggle()
-        autoJoinMenuItem.state = AppStore.autoJoin ? .on : .off
+        autoJoinItem.state = AppStore.autoJoin ? .on : .off
     }
     
     @IBAction func autoLoginClick(_ sender: NSMenuItem) {
-        autoLoginMenuItem.state = autoLoginMenuItem.state == .on ? .off : .on
-        startupAppWhenLogin(startup: autoLoginMenuItem.state == .on)
+        AppStore.autoLogin.toggle()
+        autoLoginItem.state = AppStore.autoLogin ? .on : .off
+        startupAppWhenLogin(startup: AppStore.autoLogin)
     }
     
     
@@ -89,6 +85,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate {
+    
+    func configureMenuStatus() {
+        autoJoinItem.state = AppStore.autoJoin ? .on : .off
+        autoLoginItem.state = AppStore.autoLogin ? .on : .off
+        startupAppWhenLogin(startup: AppStore.autoLogin)
+    }
     
     func openUsageController() {
         NSApp.activate(ignoringOtherApps: true)
