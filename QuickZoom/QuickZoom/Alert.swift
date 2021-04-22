@@ -5,11 +5,10 @@
 //  Created by 晋先森 on 2021/4/11.
 //
 
-import Foundation
 import Cocoa
+import Foundation
 
 class Alert {
-    
     static func showMessage(_ messsge: String) {
         let alert = NSAlert()
         alert.icon = NSImage(named: "icon")
@@ -18,7 +17,7 @@ class Alert {
         alert.addButton(withTitle: "OK")
         alert.runModal()
     }
-    
+
     static func showJoinMettingView(title: String, message: String) -> Bool {
         let alert = NSAlert()
         alert.icon = NSImage(named: "icon")

@@ -9,16 +9,13 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+    func applicationDidFinishLaunching(_: Notification) {
         launchService()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
+    func applicationWillTerminate(_: Notification) {
         // Insert code here to tear down your application
     }
-
 }
 
 extension Notification.Name {
@@ -26,33 +23,29 @@ extension Notification.Name {
 }
 
 extension AppDelegate {
-    
     func launchService() {
-        
         let mainAppIdentifier = "com.null.quickZoom"
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
-        
+
         if !isRunning {
-            DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.terminate), name: .killLauncher, object: mainAppIdentifier)
-            
+            DistributedNotificationCenter.default().addObserver(self, selector: #selector(terminate), name: .killLauncher, object: mainAppIdentifier)
+
             let path = Bundle.main.bundlePath as NSString
             var components = path.pathComponents
             components.removeLast()
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("QuickZoom") //main app name
+            components.append("QuickZoom") // main app name
 
             let newPath = NSString.path(withComponents: components)
             NSWorkspace.shared.launchApplication(newPath)
+        } else {
+            terminate()
         }
-        else {
-            self.terminate()
-        }
-        
     }
-    
+
     @objc func terminate() {
         NSApp.terminate(nil)
     }
